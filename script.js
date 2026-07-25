@@ -763,7 +763,7 @@ function getInitialUrl() {
     if (window.location.protocol.startsWith("http")) {
         return window.location.href;
     }
-    return "https://happy-birthday-nandni.vercel.app";
+    return "https://birthday-five-chi-63.vercel.app/";
 }
 
 function updateQrCode(targetUrl) {

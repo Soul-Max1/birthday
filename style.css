@@ -410,6 +410,48 @@ body::before{
 }
 
 /* =======================================
+   FLOATING QR BUTTON
+====================================== */
+
+#qrBtn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#ff2d75,#ff6599);
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 30px rgba(255,45,117,.45);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#qrBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* =======================================
    COMMON SECTION
 ======================================= */
 
@@ -1236,5 +1278,317 @@ section{
         font-size:42px;
 
     }
+
+    #qrBtn, #musicBtn {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 19px;
+
+        bottom: 18px;
+
+    }
+
+    #qrBtn {
+
+        left: 18px;
+
+    }
+
+    #musicBtn {
+
+        right: 18px;
+
+    }
+
+    .qr-card {
+
+        padding: 30px 20px;
+
+    }
+
+}
+
+/* =======================================
+   QR CODE SECTION & MODAL STYLES
+====================================== */
+
+#qr-section{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.qr-card{
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.16);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:35px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+}
+
+.qr-desc{
+
+    font-size:18px;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+
+}
+
+.qr-box{
+
+    width:220px;
+
+    height:220px;
+
+    margin:0 auto 30px;
+
+    padding:12px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.qr-box img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+}
+
+.qr-input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    align-items:center;
+
+}
+
+.qr-input-group label{
+
+    font-size:16px;
+
+    font-weight:500;
+
+    color:#fff;
+
+}
+
+.qr-input-group input{
+
+    width:100%;
+
+    max-width:480px;
+
+    padding:14px 20px;
+
+    border-radius:30px;
+
+    border:2px solid rgba(255,255,255,.4);
+
+    background:rgba(255,255,255,.25);
+
+    color:#fff;
+
+    font-size:15px;
+
+    outline:none;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.qr-input-group input::placeholder{
+
+    color:rgba(255,255,255,.7);
+
+}
+
+.qr-input-group input:focus{
+
+    background:rgba(255,255,255,.35);
+
+    border-color:#fff;
+
+    box-shadow:0 0 15px rgba(255,255,255,.4);
+
+}
+
+.qr-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:15px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.qr-actions button,
+
+.qr-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    border:none;
+
+    background:#ff2d75;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 20px rgba(255,45,117,.4);
+
+    transition:.3s;
+
+}
+
+.qr-actions button:hover,
+
+.qr-btn:hover{
+
+    transform:translateY(-3px) scale(1.04);
+
+    background:#ff0d63;
+
+}
+
+.qr-modal-content{
+
+    background:rgba(255,255,255,.2);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    padding:40px 30px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    position:relative;
+
+    max-width:90vw;
+
+    width:400px;
+
+    color:#fff;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+.qr-modal-content h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.qr-modal-content p{
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+    opacity:.9;
+
+}
+
+.modal-qr-box{
+
+    margin-bottom:25px;
+
+}
+
+.qr-modal-close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    font-size:32px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.qr-modal-close:hover{
+
+    color:#ff4d94;
+
+    transform:scale(1.2);
 
 }

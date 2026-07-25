@@ -1,0 +1,1132 @@
+/* =======================================
+   GOOGLE FONTS
+======================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:#ffd9ea;
+    color:#ffffff;
+
+}
+
+/* =======================================
+   BACKGROUND
+======================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ff9bc5 0%,transparent 40%),
+    radial-gradient(circle at bottom,#ffc7de 0%,transparent 45%),
+    linear-gradient(135deg,#ff7eb3,#ff758c,#ff9ecf,#ffd3e4);
+
+    background-size:300% 300%;
+
+    animation:bgMove 15s ease infinite;
+
+    z-index:-5;
+
+}
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* =======================================
+   LOADER
+======================================= */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#ff6ea9,#ff9ecf);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.loader-content{
+
+    width:350px;
+
+    text-align:center;
+
+}
+
+.gift-box{
+
+    font-size:90px;
+
+    animation:bounce 1s infinite;
+
+}
+
+.loader-content h2{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.loading-bar{
+
+    margin-top:35px;
+
+    width:100%;
+
+    height:12px;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.loading-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:#ffffff;
+
+    animation:loading 3s forwards;
+
+}
+
+@keyframes loading{
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =======================================
+   FLOATING BACKGROUND
+======================================= */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+#hearts,
+#balloons,
+#sparkles{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+/* =======================================
+   HERO SECTION
+======================================= */
+
+#hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.glass-card{
+
+    width:100%;
+
+    max-width:750px;
+
+    padding:60px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.16);
+
+    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.18);
+
+    text-align:center;
+
+    animation:cardFade 1.2s ease;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.glass-card h3{
+
+    font-size:22px;
+
+    letter-spacing:2px;
+
+    font-weight:400;
+
+    margin-bottom:15px;
+
+}
+
+.glass-card h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:90px;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 20px rgba(255,255,255,.8);
+
+}
+
+.glass-card h2{
+
+    margin-top:10px;
+
+    font-size:42px;
+
+    font-weight:600;
+
+}
+
+.glass-card p{
+
+    margin-top:25px;
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#fff;
+
+}
+
+/* =======================================
+   BUTTON
+======================================= */
+
+#startBtn{
+
+    margin-top:40px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:#ff2d75;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 12px 25px rgba(255,45,117,.45);
+
+}
+
+#startBtn:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    background:#ff0d63;
+
+}
+
+#startBtn i{
+
+    margin-left:10px;
+
+}
+
+/* =======================================
+   MUSIC BUTTON
+======================================= */
+
+#musicBtn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff2d75;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:
+
+    0 12px 30px rgba(255,45,117,.45);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* =======================================
+   COMMON SECTION
+======================================= */
+
+section{
+
+    width:100%;
+
+    padding:120px 10%;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.container h2{
+
+    font-family:'Great Vibes',cursive;
+
+    text-align:center;
+
+    font-size:70px;
+
+    margin-bottom:50px;
+
+    text-shadow:0 0 15px rgba(255,255,255,.5);
+
+}
+/* =======================================
+   MESSAGE SECTION
+======================================= */
+
+#message{
+
+    background:rgba(255,255,255,.08);
+
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+
+}
+
+#typewriter{
+
+    max-width:900px;
+
+    margin:40px auto 0;
+
+    font-size:24px;
+
+    line-height:2;
+
+    text-align:center;
+
+    color:#fff;
+
+    font-weight:400;
+
+    white-space:pre-line;
+
+    min-height:260px;
+
+}
+
+/* =======================================
+   MEMORY SECTION
+======================================= */
+
+#memory{
+
+    background:transparent;
+
+}
+
+.memory-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.15);
+
+    -webkit-backdrop-filter:blur(15px);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.memory-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.memory-card i{
+
+    font-size:70px;
+
+    color:#ffffff;
+
+    margin-bottom:25px;
+
+}
+
+.memory-card p{
+
+    font-size:22px;
+
+    line-height:2;
+
+}
+
+/* =======================================
+   PHOTO GALLERY
+======================================= */
+
+#gallery{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:4px solid rgba(255,255,255,.35);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+    transition:.45s;
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.05) rotate(-2deg);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.30);
+
+}
+
+/* =======================================
+   ENDING SECTION
+======================================= */
+
+#ending{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+#ending h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:95px;
+
+    margin:25px 0;
+
+}
+
+#ending p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:24px;
+
+    line-height:2;
+
+}
+
+#ending h3{
+
+    margin-top:60px;
+
+    font-size:38px;
+
+    font-weight:500;
+
+}
+
+#ending h2:last-child{
+
+    margin-top:20px;
+
+    font-size:65px;
+
+}
+
+/* =======================================
+   CONFETTI CANVAS
+======================================= */
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:100;
+
+}
+
+/* =======================================
+   SCROLLBAR
+======================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ffc8df;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff4d94;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff1f74;
+
+}
+/* =======================================
+   FLOATING HEARTS
+======================================= */
+
+.heart{
+
+    position:absolute;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    opacity:.8;
+
+    animation:floatHeart linear infinite;
+
+    text-shadow:0 0 15px rgba(255,255,255,.8);
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(110vh) scale(.5) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.5) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =======================================
+   BALLOONS
+======================================= */
+
+.balloon{
+
+    position:absolute;
+
+    width:60px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    opacity:.85;
+
+    animation:floatBalloon linear infinite;
+
+}
+
+.balloon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:80px;
+
+    background:#ffffff;
+
+    left:50%;
+
+    top:75px;
+
+}
+
+.balloon:nth-child(1){
+
+    background:#ff4f8b;
+
+}
+
+.balloon:nth-child(2){
+
+    background:#ffb3d1;
+
+}
+
+.balloon:nth-child(3){
+
+    background:#ff79a8;
+
+}
+
+.balloon:nth-child(4){
+
+    background:#ffffff;
+
+}
+
+@keyframes floatBalloon{
+
+    from{
+
+        transform:translateY(120vh);
+
+    }
+
+    to{
+
+        transform:translateY(-130vh);
+
+    }
+
+}
+
+/* =======================================
+   SPARKLES
+======================================= */
+
+.sparkle{
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    box-shadow:0 0 15px white;
+
+    animation:twinkle 2s infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        transform:scale(.5);
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        transform:scale(2);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.5);
+
+        opacity:.2;
+
+    }
+
+}
+
+/* =======================================
+   GLOW EFFECTS
+======================================= */
+
+.glass-card{
+
+    animation:
+
+    cardFade 1.2s ease,
+
+    glowCard 4s infinite alternate;
+
+}
+
+@keyframes glowCard{
+
+    from{
+
+        box-shadow:
+
+        0 15px 40px rgba(255,255,255,.15);
+
+    }
+
+    to{
+
+        box-shadow:
+
+        0 20px 60px rgba(255,255,255,.35);
+
+    }
+
+}
+
+#startBtn{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* =======================================
+   IMAGE HOVER
+======================================= */
+
+.gallery-grid img{
+
+    cursor:pointer;
+
+}
+
+.gallery-grid img:hover{
+
+    filter:brightness(1.08);
+
+}
+
+/* =======================================
+   FADE ANIMATION
+======================================= */
+
+.fade{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media(max-width:992px){
+
+    .glass-card{
+
+        padding:45px;
+
+    }
+
+    .glass-card h1{
+
+        font-size:70px;
+
+    }
+
+    .glass-card h2{
+
+        font-size:34px;
+
+    }
+
+    .container h2{
+
+        font-size:55px;
+
+    }
+
+    #ending h1{
+
+        font-size:70px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+
+        padding:90px 25px;
+
+    }
+
+    .glass-card{
+
+        padding:35px 25px;
+
+    }
+
+    .glass-card h1{
+
+        font-size:55px;
+
+    }
+
+    .glass-card h2{
+
+        font-size:28px;
+
+    }
+
+    .glass-card p{
+
+        font-size:17px;
+
+    }
+
+    #typewriter{
+
+        font-size:19px;
+
+        line-height:1.8;
+
+    }
+
+    .memory-card{
+
+        padding:30px;
+
+    }
+
+    .memory-card p{
+
+        font-size:18px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-grid img{
+
+        height:350px;
+
+    }
+
+    #ending h1{
+
+        font-size:55px;
+
+    }
+
+    #ending h2:last-child{
+
+        font-size:45px;
+
+    }
+
+    #musicBtn{
+
+        width:55px;
+
+        height:55px;
+
+        font-size:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .glass-card h1{
+
+        font-size:42px;
+
+    }
+
+    .glass-card h2{
+
+        font-size:24px;
+
+    }
+
+    .container h2{
+
+        font-size:42px;
+
+    }
+
+    #typewriter{
+
+        font-size:17px;
+
+    }
+
+    .memory-card p{
+
+        font-size:16px;
+
+    }
+
+    #ending h1{
+
+        font-size:42px;
+
+    }
+
+}

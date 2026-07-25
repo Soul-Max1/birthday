@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise QR Card 🎁 - Nandni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff9ecf, #ffd3e4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .share-card {
+            background: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 35px;
+            padding: 50px 35px;
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gift-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 64px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .qr-wrapper {
+            background: #ffffff;
+            padding: 18px;
+            border-radius: 25px;
+            display: inline-block;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .qr-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .qr-wrapper img {
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .instructions {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .link-badge {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 30px;
+            word-break: break-all;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 50px;
+            border: none;
+            background: #ff2d75;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255, 45, 117, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff0d63;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 45, 117, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.45);
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .share-card { box-shadow: none; border: 2px solid #ccc; background: white; color: black; }
+            h1 { color: #ff2d75; text-shadow: none; }
+            .instructions, h3, .link-badge { color: #333; }
+            .action-buttons { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="share-card">
+        <div class="gift-icon">🎁</div>
+        <h3>A Special Surprise For You</h3>
+        <h1>Happy Birthday Nandni ❤️</h1>
+
+        <div class="qr-wrapper">
+            <img src="qrcode.png" alt="Happy Birthday Nandni Surprise QR Code">
+        </div>
+
+        <p class="instructions">
+            Scan this QR code with any phone camera to unlock your special birthday surprise! ✨
+        </p>
+
+        <div class="link-badge">
+            <i class="fa-solid fa-link"></i> https://birthday-five-chi-63.vercel.app/
+        </div>
+
+        <div class="action-buttons">
+            <a href="qrcode.png" download="Birthday_Surprise_QR.png" class="btn">
+                <i class="fa-solid fa-download"></i> Save QR Image
+            </a>
+            <button onclick="window.print()" class="btn btn-secondary">
+                <i class="fa-solid fa-print"></i> Print Card
+            </button>
+            <button id="copyBtn" class="btn btn-secondary">
+                <i class="fa-solid fa-copy"></i> Copy Link
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("copyBtn").addEventListener("click", () => {
+            const url = "https://birthday-five-chi-63.vercel.app/";
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById("copyBtn");
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                setTimeout(() => btn.innerHTML = orig, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

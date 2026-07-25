@@ -335,7 +335,7 @@ setInterval(createSparkle, 200);
 
 const revealElements = document.querySelectorAll(
 
-    "#message, #memory, #gallery, #qr-section, #ending"
+    "#message, #memory, #gallery, #ending"
 
 );
 
@@ -744,79 +744,3 @@ Have a beautiful birthday!
 ❤️`
 
 );
-
-/* ==========================================
-   QR CODE GENERATOR & MODAL
-========================================== */
-
-const qrImage = document.getElementById("qrImage");
-const modalQrImage = document.getElementById("modalQrImage");
-const qrUrlInput = document.getElementById("qrUrlInput");
-const copyUrlBtn = document.getElementById("copyUrlBtn");
-const qrBtn = document.getElementById("qrBtn");
-const qrModal = document.getElementById("qrModal");
-const qrModalClose = document.querySelector(".qr-modal-close");
-const downloadQrBtn = document.getElementById("downloadQrBtn");
-const modalDownloadQrBtn = document.getElementById("modalDownloadQrBtn");
-
-function getInitialUrl() {
-    if (window.location.protocol.startsWith("http")) {
-        return window.location.href;
-    }
-    return "https://birthday-five-chi-63.vercel.app/";
-}
-
-function updateQrCode(targetUrl) {
-    if (!targetUrl || targetUrl.trim() === "") {
-        targetUrl = getInitialUrl();
-    }
-    const apiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${encodeURIComponent(targetUrl.trim())}`;
-    
-    if (qrImage) qrImage.src = apiUrl;
-    if (modalQrImage) modalQrImage.src = apiUrl;
-    if (downloadQrBtn) downloadQrBtn.href = apiUrl;
-    if (modalDownloadQrBtn) modalDownloadQrBtn.href = apiUrl;
-}
-
-if (qrUrlInput) {
-    const defaultUrl = getInitialUrl();
-    qrUrlInput.value = defaultUrl;
-    updateQrCode(defaultUrl);
-
-    qrUrlInput.addEventListener("input", (e) => {
-        updateQrCode(e.target.value);
-    });
-}
-
-if (copyUrlBtn && qrUrlInput) {
-    copyUrlBtn.addEventListener("click", () => {
-        const textToCopy = qrUrlInput.value || getInitialUrl();
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const orig = copyUrlBtn.innerHTML;
-            copyUrlBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-            setTimeout(() => {
-                copyUrlBtn.innerHTML = orig;
-            }, 2000);
-        }).catch(err => {
-            console.error("Could not copy link: ", err);
-        });
-    });
-}
-
-if (qrBtn && qrModal) {
-    qrBtn.addEventListener("click", () => {
-        qrModal.style.display = "flex";
-    });
-}
-
-if (qrModalClose && qrModal) {
-    qrModalClose.addEventListener("click", () => {
-        qrModal.style.display = "none";
-    });
-
-    qrModal.addEventListener("click", (e) => {
-        if (e.target === qrModal || e.target === qrModalClose) {
-            qrModal.style.display = "none";
-        }
-    });
-}

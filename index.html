@@ -112,28 +112,6 @@
         </div>
     </section>
     <!-- ========================= -->
-    <!-- QR CODE SECTION -->
-    <!-- ========================= -->
-    <section id="qr-section">
-        <div class="container">
-            <h2>Scan & Share 📱</h2>
-            <div class="qr-card">
-                <p class="qr-desc">Scan this QR code with any phone camera to open this surprise website directly!</p>
-                <div class="qr-box">
-                    <img id="qrImage" src="qrcode.png" alt="Website QR Code">
-                </div>
-                <div class="qr-input-group">
-                    <label for="qrUrlInput"><i class="fa-solid fa-link"></i> Website Link:</label>
-                    <input type="text" id="qrUrlInput" placeholder="https://birthday-five-chi-63.vercel.app/" value="https://birthday-five-chi-63.vercel.app/">
-                    <div class="qr-actions">
-                        <button id="copyUrlBtn"><i class="fa-solid fa-copy"></i> Copy Link</button>
-                        <a id="downloadQrBtn" href="qrcode.png" download="Birthday_Surprise_QR.png" class="qr-btn"><i class="fa-solid fa-download"></i> Download QR</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ========================= -->
     <!-- FINAL -->
     <!-- ========================= -->
     <section id="ending">
@@ -162,31 +140,14 @@
         <source src="music/Happy Birthday Instrumental.mp3"
             type="audio/mpeg">
     </audio>
-    <!-- FLOATING ACTION BUTTONS -->
+    <!-- MUSIC BUTTON -->
     <button id="musicBtn" aria-label="Toggle music playback">
         <i class="fa-solid fa-music"></i>
-    </button>
-    <button id="qrBtn" aria-label="Open QR Code">
-        <i class="fa-solid fa-qrcode"></i>
     </button>
     <!-- IMAGE LIGHTBOX MODAL -->
     <div id="imageModal" class="image-modal">
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modalImg" alt="Enlarged photo preview">
-    </div>
-    <!-- QR CODE MODAL -->
-    <div id="qrModal" class="image-modal">
-        <div class="qr-modal-content">
-            <span class="qr-modal-close">&times;</span>
-            <h3>Scan QR Code 📱</h3>
-            <p>Scan with your phone camera to open the website directly</p>
-            <div class="qr-box modal-qr-box">
-                <img id="modalQrImage" src="qrcode.png" alt="Website QR Code">
-            </div>
-            <a id="modalDownloadQrBtn" href="qrcode.png" download="Birthday_Surprise_QR.png" class="qr-btn">
-                <i class="fa-solid fa-download"></i> Save QR Code
-            </a>
-        </div>
     </div>
     <!-- CANVAS -->
     <canvas id="confetti"></canvas>

@@ -46,9 +46,7 @@ May this year bring you everything your heart has been wishing for.
 
 Keep shining, keep smiling, and have a beautiful birthday! ✨😊
 
-With lots of love,
-
-Daksh ❤️
+With lots of love ❤️
 
 `;
 
@@ -430,24 +428,46 @@ setInterval(() => {
 
 
 /* ==========================================
-   IMAGE HOVER EFFECT
+   IMAGE HOVER & LIGHTBOX MODAL EFFECT
 ========================================== */
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeModal = document.querySelector(".modal-close");
 
 document.querySelectorAll(".gallery-grid img").forEach(image => {
 
     image.addEventListener("click", () => {
 
-        image.style.transform = "scale(1.15)";
+        image.style.transform = "scale(1.05)";
 
         setTimeout(() => {
 
             image.style.transform = "";
 
-        }, 500);
+        }, 300);
+
+        if (modal && modalImg) {
+            modal.style.display = "flex";
+            modalImg.src = image.src;
+            modalImg.alt = image.alt;
+        }
 
     });
 
 });
+
+if (closeModal && modal) {
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal || e.target === closeModal) {
+            modal.style.display = "none";
+        }
+    });
+}
 /* ==========================================
    CONTINUOUS CONFETTI
 ========================================== */
@@ -719,8 +739,6 @@ console.log(
 
 `❤️
 Happy Birthday Nandni ❤️
-
-Made with love by Daksh.
 
 Have a beautiful birthday!
 ❤️`
